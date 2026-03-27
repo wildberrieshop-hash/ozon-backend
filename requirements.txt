@@ -1,0 +1,7 @@
+aiogram==3.3.0
+python-dotenv==1.0.0
+requests==2.31.0
+fastapi==0.135.2
+uvicorn==0.42.0
+pydantic==2.12.5
+starlette==1.0.0
