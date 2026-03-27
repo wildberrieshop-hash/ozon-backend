@@ -20,7 +20,6 @@ import uvicorn
 
 # Импорты из локальной папки TGBOT
 from tgbot_db import get_user_credentials
-from ozon_client import OzonClient
 from supply_flow import get_product_by_sku, create_supply_full_flow
 
 # ──────────────────────────────────────────────────────────────────────
