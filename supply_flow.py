@@ -149,8 +149,8 @@ async def prepare_supply_drafts_pipeline(
 
     for i, cluster_id in enumerate(cluster_ids):
         if i > 0:
-            print(f"[PIPE] ⏳ Пауза 2 сек (rate limit create_draft)...")
-            time.sleep(2)
+            print(f"[PIPE] ⏳ Пауза 3 сек (rate limit create_draft)...")
+            time.sleep(3)
         try:
             t0 = time.time()
             draft_result = client.create_draft(items=items, cluster_id=cluster_id)
@@ -166,29 +166,29 @@ async def prepare_supply_drafts_pipeline(
         print(f"[PIPE] ❌ Не удалось создать ни одного черновика")
         return {"success": False, "clusters": results, "common_dates": [], "all_clusters": []}
 
-    # ─── Фаза 2: Параллельный скоринг ───────────────────────────────────────
-    print(f"\n[PIPE] ═══ ФАЗА 2: Скоринг ПАРАЛЛЕЛЬНО ({len(draft_map)} черновиков) ═══")
+    # ─── Фаза 1.5: Пауза после создания всех черновиков ────────────────────
+    print(f"[PIPE] ⏳ Пауза 5 сек после создания черновиков...")
+    time.sleep(5)
 
-    async def do_scoring(cluster_id: int, draft_id: int):
-        """Запускает get_draft_info в executor (не блокирует event loop)."""
-        loop = asyncio.get_event_loop()
+    # ─── Фаза 2: Скоринг последовательно (параллельный вызывает 429) ────────
+    print(f"\n[PIPE] ═══ ФАЗА 2: Скоринг ({len(draft_map)} черновиков) ═══")
+
+    scoring_results = []
+    for i, (cluster_id, draft_id) in enumerate(draft_map.items()):
+        if i > 0:
+            print(f"[PIPE] ⏳ Пауза 8 сек между скорингами...")
+            time.sleep(8)
         t0 = time.time()
         try:
-            draft_info = await loop.run_in_executor(
-                None,
-                lambda: client.get_draft_info(draft_id, timeout=120)
-            )
+            draft_info = client.get_draft_info(draft_id, timeout=120)
             elapsed = time.time() - t0
             clusters_count = len(draft_info.get("clusters", []))
-            print(f"[PIPE] ✅ Скоринг cluster {cluster_id}: {clusters_count} кластеров в ответе ({elapsed:.1f}с)")
-            return cluster_id, draft_info
+            print(f"[PIPE] ✅ Скоринг cluster {cluster_id}: {clusters_count} кластеров ({elapsed:.1f}с)")
+            scoring_results.append((cluster_id, draft_info))
         except Exception as e:
             elapsed = time.time() - t0
             print(f"[PIPE] ❌ Скоринг cluster {cluster_id}: {e} ({elapsed:.1f}с)")
-            return cluster_id, None
-
-    scoring_tasks = [do_scoring(cid, did) for cid, did in draft_map.items()]
-    scoring_results = await asyncio.gather(*scoring_tasks)
+            scoring_results.append((cluster_id, None))
 
     # Разбираем результаты скоринга
     warehouse_map = {}        # cluster_id -> warehouse_id
@@ -265,8 +265,8 @@ async def prepare_supply_drafts_pipeline(
         }
 
     # ─── Фаза 3: Пауза перед таймслотами ────────────────────────────────────
-    print(f"\n[PIPE] ═══ ФАЗА 3: Пауза 25 сек (rate limit timeslots) ═══")
-    time.sleep(25)
+    print(f"\n[PIPE] ═══ ФАЗА 3: Пауза 30 сек (rate limit timeslots) ═══")
+    time.sleep(30)
 
     # ─── Фаза 4: Таймслоты последовательно ──────────────────────────────────
     print(f"\n[PIPE] ═══ ФАЗА 4: Таймслоты ({len(warehouse_map)} кластеров) ═══")
@@ -278,8 +278,8 @@ async def prepare_supply_drafts_pipeline(
 
     for i, (cluster_id, warehouse_id) in enumerate(warehouse_map.items()):
         if i > 0:
-            print(f"[PIPE] ⏳ Пауза 8 сек между таймслотами...")
-            time.sleep(8)
+            print(f"[PIPE] ⏳ Пауза 15 сек между таймслотами...")
+            time.sleep(15)
 
         draft_id = draft_map[cluster_id]
         t0 = time.time()
