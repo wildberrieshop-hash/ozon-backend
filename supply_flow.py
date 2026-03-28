@@ -209,41 +209,48 @@ async def prepare_supply_drafts_pipeline(
             if cid:
                 all_clusters_seen[cid] = cname
 
-        # Ищем наш кластер
-        found_cluster = False
-        for cluster in clusters_data:
-            cid = cluster.get("macrolocal_cluster_id")
-            if cid != cluster_id:
-                continue
+        # Берём первый кластер из ответа скоринга (Ozon может вернуть другой ID)
+        if not clusters_data:
+            results[cluster_id]["error"] = "Скоринг вернул пустой список кластеров"
+            print(f"[PIPE] ❌ Кластер {cluster_id}: пустой ответ скоринга")
+            continue
 
-            cname = cluster.get("cluster_name", f"Кластер {cluster_id}")
-            results[cluster_id]["name"] = cname
-            found_cluster = True
+        # Логируем все кластеры из ответа для диагностики
+        print(f"[PIPE] Скоринг для cluster_id={cluster_id}: реальные ID в ответе = "
+              f"{[c.get('macrolocal_cluster_id') for c in clusters_data]}")
 
-            warehouses = cluster.get("warehouses", [])
-            print(f"[PIPE] Кластер {cname} ({cluster_id}): {len(warehouses)} складов")
+        # Используем первый кластер из ответа (Ozon может переназначить ID)
+        cluster = clusters_data[0]
+        real_cid = cluster.get("macrolocal_cluster_id")
+        cname = cluster.get("cluster_name", f"Кластер {real_cid}")
 
-            found_wh = False
-            for wh in warehouses:
-                state = wh.get("availability_status", {}).get("state", "UNAVAILABLE")
-                wh_id = wh.get("storage_warehouse", {}).get("warehouse_id")
-                wh_name = wh.get("storage_warehouse", {}).get("name", "Unknown")
-                print(f"[PIPE]   Склад {wh_name} ({wh_id}): {state}")
+        if real_cid != cluster_id:
+            print(f"[PIPE] ⚠️  Ozon переназначил кластер {cluster_id} → {real_cid} ({cname})")
 
-                if state in ["AVAILABLE", "FULL_AVAILABLE"] and not found_wh:
-                    warehouse_map[cluster_id] = wh_id
-                    results[cluster_id]["warehouse_id"] = wh_id
-                    found_wh = True
-                    print(f"[PIPE] ✅ Выбран склад: {wh_name}")
+        results[cluster_id]["name"] = cname
+        results[cluster_id]["real_cluster_id"] = real_cid
 
-            if not found_wh:
-                results[cluster_id]["error"] = "Нет доступных складов"
-                print(f"[PIPE] ❌ Кластер {cname}: нет доступных складов")
-            break
+        warehouses = cluster.get("warehouses", [])
+        print(f"[PIPE] Кластер {cname} ({real_cid}): {len(warehouses)} складов")
 
-        if not found_cluster:
-            results[cluster_id]["error"] = "Кластер не найден в ответе скоринга"
-            print(f"[PIPE] ❌ Кластер {cluster_id} не найден в скоринге")
+        found_wh = False
+        for wh in warehouses:
+            state = wh.get("availability_status", {}).get("state", "UNAVAILABLE")
+            wh_id = wh.get("storage_warehouse", {}).get("warehouse_id")
+            wh_name = wh.get("storage_warehouse", {}).get("name", "Unknown")
+            print(f"[PIPE]   Склад {wh_name} ({wh_id}): {state}")
+
+            if state in ["AVAILABLE", "FULL_AVAILABLE"] and not found_wh:
+                # Ключ в warehouse_map — реальный cluster_id от Ozon
+                warehouse_map[cluster_id] = wh_id
+                results[cluster_id]["warehouse_id"] = wh_id
+                results[cluster_id]["real_cluster_id"] = real_cid
+                found_wh = True
+                print(f"[PIPE] ✅ Выбран склад: {wh_name}")
+
+        if not found_wh:
+            results[cluster_id]["error"] = "Нет доступных складов"
+            print(f"[PIPE] ❌ Кластер {cname}: нет доступных складов")
 
     all_clusters_list = [{"id": cid, "name": cname} for cid, cname in sorted(all_clusters_seen.items())]
     print(f"[PIPE] Всего кластеров от Ozon: {len(all_clusters_list)}")

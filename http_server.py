@@ -279,6 +279,8 @@ async def create_supply(
         warehouse_id = cdata["warehouse_id"]
         cluster_name = cdata["name"]
         timeslots_by_date = cdata["timeslots_by_date"]
+        # Используем реальный cluster_id из скоринга (Ozon мог переназначить)
+        real_cluster_id = cdata.get("real_cluster_id", cluster_id)
 
         # Ищем таймслот для выбранной даты
         slots = timeslots_by_date.get(target_date)
@@ -295,13 +297,14 @@ async def create_supply(
                 continue
 
         first_slot = slots[0]
-        print(f"[API] Создаю поставку: {cluster_name}, draft={draft_id}, слот={first_slot.get('from','?')}")
+        print(f"[API] Создаю поставку: {cluster_name}, draft={draft_id}, "
+              f"real_cluster={real_cluster_id}, слот={first_slot.get('from','?')}")
 
         try:
             t0 = time.time()
             client.create_supply_v2(
                 draft_id=draft_id,
-                cluster_id=cluster_id,
+                cluster_id=real_cluster_id,
                 warehouse_id=warehouse_id,
                 timeslot_from=first_slot["from"],
                 timeslot_to=first_slot["to"],
