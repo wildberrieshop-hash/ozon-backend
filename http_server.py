@@ -128,12 +128,30 @@ async def get_clusters(
     client_id: str = None,
     api_key: str = None
 ):
-    """Возвращает список кластеров. Динамически обновляется после первого скоринга."""
+    """Возвращает реальный список кластеров от Ozon API (/v1/cluster/list)."""
+    global ozon_clusters_cache
     credentials, user_id = get_credentials(x_telegram_init_data, client_id, api_key)
     if not credentials:
         raise HTTPException(status_code=401, detail="Missing credentials")
-    print(f"[API] /clusters user={user_id}, кластеров в кэше: {len(ozon_clusters_cache)}")
-    return {"clusters": ozon_clusters_cache}
+
+    client = make_ozon_client(credentials)
+    raw = client.get_clusters()
+
+    if raw:
+        # Нормализуем формат: {id, name}
+        clusters = []
+        for c in raw:
+            cid = c.get("macrolocal_cluster_id") or c.get("id")
+            cname = c.get("cluster_name") or c.get("name", f"Кластер {cid}")
+            if cid:
+                clusters.append({"id": int(cid), "name": cname})
+        ozon_clusters_cache = clusters
+        print(f"[API] /clusters от Ozon API: {len(clusters)} кластеров")
+    else:
+        clusters = ozon_clusters_cache
+        print(f"[API] /clusters из кэша: {len(clusters)} кластеров (API недоступен)")
+
+    return {"clusters": clusters}
 
 
 @app.post("/api/verify-sku")
