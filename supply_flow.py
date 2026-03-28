@@ -12,7 +12,7 @@ supply_flow.py — полный поток создания поставки.
 import sys
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Добавляем родительскую директорию в path
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -92,6 +92,129 @@ def get_product_by_sku(client: OzonClient, sku: str) -> dict | None:
         return None
 
 
+async def prepare_supply_draft(
+    client: OzonClient,
+    sku: str,
+    quantity: int,
+    delivery_type: str,  # "direct" или "crossdock"
+    cluster_ids: list[int],
+    fbo_sku: int | None = None,
+    product_id: int | None = None,
+) -> dict:
+    """
+    Создаёт черновик, делает скоринг, получает реальные таймслоты от Ozon.
+    Вызывается при выборе кластеров, чтобы /api/create-supply был быстрым.
+
+    Возвращает:
+    {
+        "success": bool,
+        "message": str,
+        "draft_id": int,
+        "warehouse_id": int,
+        "cluster_id": int,
+        "timeslots_by_date": {"YYYY-MM-DD": [{"from": "...", "to": "..."}]},
+    }
+    """
+    result = {
+        "success": False,
+        "message": "",
+        "draft_id": None,
+        "warehouse_id": None,
+        "cluster_id": None,
+        "timeslots_by_date": {},
+    }
+
+    try:
+        # Шаг 1: fbo_sku уже должен быть известен из verify-sku
+        if not fbo_sku:
+            product = get_product_by_sku(client, sku)
+            if not product:
+                result["message"] = f"❌ Товар '{sku}' не найден"
+                return result
+            fbo_sku = product["fbo_sku"]
+            product_id = product["product_id"]
+
+        print(f"[PREP] fbo_sku={fbo_sku}, product_id={product_id}")
+
+        # Шаг 2: Создаём черновик
+        items = [{"sku": fbo_sku, "quantity": quantity}]
+        first_cluster_id = cluster_ids[0] if cluster_ids else None
+        print(f"[PREP] Создаю черновик для кластера {first_cluster_id}...")
+        time.sleep(2)
+        draft_result = client.create_draft(items=items, cluster_id=first_cluster_id)
+        draft_id = draft_result.get("draft_id")
+        result["draft_id"] = draft_id
+        print(f"[PREP] Черновик создан: draft_id={draft_id}")
+
+        # Шаг 3: Скоринг
+        print(f"[PREP] ⏳ Ожидаю скоринг...")
+        draft_info = client.get_draft_info(draft_id, timeout=120)
+        clusters_data = draft_info.get("clusters", [])
+        suitable_clusters = []
+
+        for cluster in clusters_data:
+            cluster_id = cluster.get("macrolocal_cluster_id")
+            cluster_name = cluster.get("cluster_name", "Unknown")
+            if cluster_id not in cluster_ids:
+                continue
+            warehouses = cluster.get("warehouses", [])
+            available_warehouses = []
+            for wh in warehouses:
+                state = wh.get("availability_status", {}).get("state", "UNAVAILABLE")
+                wh_id = wh.get("storage_warehouse", {}).get("warehouse_id")
+                wh_name = wh.get("storage_warehouse", {}).get("name", "Unknown")
+                if state in ["AVAILABLE", "FULL_AVAILABLE"]:
+                    available_warehouses.append({"warehouse_id": wh_id, "name": wh_name})
+            if available_warehouses:
+                suitable_clusters.append({
+                    "cluster_id": cluster_id,
+                    "cluster_name": cluster_name,
+                    "warehouses": available_warehouses,
+                })
+                print(f"[PREP] ✅ Кластер {cluster_name}: {len(available_warehouses)} складов")
+
+        if not suitable_clusters:
+            result["message"] = "❌ Нет доступных складов для выбранных кластеров"
+            return result
+
+        cluster_id = suitable_clusters[0]["cluster_id"]
+        warehouse_id = suitable_clusters[0]["warehouses"][0]["warehouse_id"]
+        result["cluster_id"] = cluster_id
+        result["warehouse_id"] = warehouse_id
+
+        # Шаг 4: Получаем таймслоты на 14 дней вперёд
+        today = datetime.now()
+        date_from = (today + timedelta(days=1)).strftime("%Y-%m-%d")
+        date_to = (today + timedelta(days=14)).strftime("%Y-%m-%d")
+        print(f"[PREP] ⏳ Получаю таймслоты {date_from} — {date_to}...")
+        time.sleep(25)
+
+        timeslots = client.get_timeslots_v2(
+            draft_id=draft_id,
+            cluster_id=cluster_id,
+            warehouse_id=warehouse_id,
+            date_from=date_from,
+            date_to=date_to,
+            supply_type="DIRECT" if delivery_type == "direct" else "CROSSDOCK",
+        )
+
+        timeslots_by_date = {}
+        for day in timeslots:
+            timeslots_by_date[day["date"]] = day["timeslots"]
+
+        result["timeslots_by_date"] = timeslots_by_date
+        result["success"] = True
+        result["message"] = f"✅ Готово: {len(timeslots_by_date)} дат доступно"
+        print(f"[PREP] ✅ Таймслоты получены: {list(timeslots_by_date.keys())}")
+
+    except OzonAPIError as e:
+        result["message"] = f"❌ Ошибка Ozon API: {e.message}"
+    except Exception as e:
+        result["message"] = f"❌ Непредвиденная ошибка: {str(e)}"
+
+    return result
+
+
 async def create_supply_full_flow(
     client: OzonClient,
     sku: str,
@@ -101,6 +224,8 @@ async def create_supply_full_flow(
     target_date: str,  # "YYYY-MM-DD"
     seller_warehouse_id: int | None = None,
     drop_off_warehouse_id: int | None = None,
+    fbo_sku: int | None = None,  # если уже известен — пропускаем поиск
+    product_id: int | None = None,
 ) -> dict:
     """
     Полный поток создания поставки.
@@ -125,49 +250,21 @@ async def create_supply_full_flow(
 
     try:
         # ─── Шаг 1: Получаем информацию о товаре через API ─────────────────
-        product = get_product_by_sku(client, sku)
-        if not product:
-            result["message"] = f"❌ Товар с артикулом '{sku}' не найден в кабинете Озона"
-            return result
+        if fbo_sku and product_id:
+            # Уже известны — пропускаем лишние API запросы
+            print(f"[DEBUG] Используем кэшированный fbo_sku={fbo_sku}, product_id={product_id}")
+        else:
+            product = get_product_by_sku(client, sku)
+            if not product:
+                result["message"] = f"❌ Товар с артикулом '{sku}' не найден в кабинете Озона"
+                return result
 
-        product_id = product["product_id"]
-        fbo_sku = product.get("fbo_sku")
+            product_id = product["product_id"]
+            fbo_sku = product.get("fbo_sku")
 
-        if not fbo_sku:
-            result["message"] = f"❌ Не удалось получить SKU для товара '{sku}'"
-            return result
-
-        # ─── Шаг 2: Проверяем остатки через API (опционально) ────────────────
-        try:
-            stocks_info = client.get_stocks([product_id])
-
-            if stocks_info and len(stocks_info) > 0:
-                stock_data = stocks_info[0]
-                stock_items = stock_data.get("stocks", [])
-
-                # Ищем FBO остатки
-                fbo_present = 0
-                fbo_reserved = 0
-
-                for stock in stock_items:
-                    if stock.get("type") == "FBO":
-                        fbo_present = stock.get("present", 0)
-                        fbo_reserved = stock.get("reserved", 0)
-                        break
-
-                free = fbo_present - fbo_reserved
-
-                if free > 0 and free < quantity:
-                    result["message"] = (
-                        f"⚠️ Низкий остаток товара '{sku}':\n"
-                        f"   Свободно: {free}, требуется: {quantity}"
-                    )
-                    # Но не блокируем поставку - продавец может знать о новых поступлениях
-            else:
-                print(f"[DEBUG] Нет информации об остатках - товар может быть новым")
-
-        except OzonAPIError as e:
-            print(f"[DEBUG] Ошибка получения остатков (не критично): {e.message}")
+            if not fbo_sku:
+                result["message"] = f"❌ Не удалось получить SKU для товара '{sku}'"
+                return result
 
         # ─── Шаг 3: Создаём черновик поставки ───────────────────────────────
         items = [{"sku": fbo_sku, "quantity": quantity}]
@@ -281,7 +378,7 @@ async def create_supply_full_flow(
             # get_draft_info() делает несколько внутренних запросов
             # Ждем дольше перед get_timeslots_v2()
             print(f"[DEBUG] ⏳ Ожидаю перед получением таймслотов (лимит Озона: per second)...")
-            time.sleep(5)
+            time.sleep(15)
 
             timeslots = client.get_timeslots_v2(
                 draft_id=draft_id,

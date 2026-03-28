@@ -20,7 +20,14 @@ import uvicorn
 
 # Импорты из локальной папки TGBOT
 from tgbot_db import get_user_credentials
-from supply_flow import get_product_by_sku, create_supply_full_flow
+from supply_flow import get_product_by_sku, create_supply_full_flow, prepare_supply_draft
+from ozon_client import OzonClient
+
+# ──────────────────────────────────────────────────────────────────────
+# In-memory кэш черновиков (draft_id, warehouse_id, таймслоты)
+# Ключ: "sku|quantity|delivery_type|clusters"
+# ──────────────────────────────────────────────────────────────────────
+supply_draft_cache: dict = {}
 
 # ──────────────────────────────────────────────────────────────────────
 # FastAPI App
@@ -76,6 +83,8 @@ class GetDatesRequest(BaseModel):
     quantity: int
     clusters: list[int]
     delivery_type: str
+    fbo_sku: int | None = None
+    product_id: int | None = None
 
 class CreateSupplyRequest(BaseModel):
     sku: str
@@ -83,6 +92,8 @@ class CreateSupplyRequest(BaseModel):
     clusters: list[int]
     delivery_type: str
     date: str
+    fbo_sku: int | None = None
+    product_id: int | None = None
 
 # ──────────────────────────────────────────────────────────────────────
 # API Endpoints
@@ -101,6 +112,7 @@ async def get_clusters(x_telegram_init_data: str = Header(None), client_id: str 
     """Получает доступные кластеры пользователя"""
     try:
         credentials = None
+        user_id = None
 
         # Приоритет 1: Telegram initData
         if x_telegram_init_data:
@@ -152,6 +164,7 @@ async def verify_sku(request: VerifySkuRequest, x_telegram_init_data: str = Head
     """Проверяет наличие товара по SKU"""
     try:
         credentials = None
+        user_id = None
 
         # Приоритет 1: Telegram initData
         if x_telegram_init_data:
@@ -182,7 +195,9 @@ async def verify_sku(request: VerifySkuRequest, x_telegram_init_data: str = Head
             return {
                 "found": True,
                 "sku": request.sku,
-                "name": product.get("name", "Unknown")
+                "name": product.get("name", "Unknown"),
+                "fbo_sku": product.get("fbo_sku"),
+                "product_id": product.get("product_id"),
             }
         else:
             print(f"[API] ❌ SKU {request.sku} не найден")
@@ -196,17 +211,16 @@ async def verify_sku(request: VerifySkuRequest, x_telegram_init_data: str = Head
 
 @app.post("/api/get-dates")
 async def get_dates(request: GetDatesRequest, x_telegram_init_data: str = Header(None), client_id: str = None, api_key: str = None):
-    """Получает доступные даты доставки"""
+    """Создаёт черновик, делает скоринг, получает реальные таймслоты. Возвращает доступные даты."""
     try:
         credentials = None
+        user_id = None
 
-        # Приоритет 1: Telegram initData
         if x_telegram_init_data:
             user_id = extract_user_id_from_init_data(x_telegram_init_data)
             if user_id:
                 credentials = get_user_credentials(user_id)
 
-        # Приоритет 2: Query параметры (для локального тестирования)
         if not credentials and client_id and api_key:
             credentials = {"client_id": client_id, "api_key": api_key}
 
@@ -215,15 +229,43 @@ async def get_dates(request: GetDatesRequest, x_telegram_init_data: str = Header
 
         print(f"[API] /get-dates для SKU {request.sku}, пользователь {user_id}")
 
-        # Генерируем доступные даты
-        today = datetime.now()
-        dates = []
-        day_names = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+        client = OzonClient(
+            client_id=credentials['client_id'],
+            api_key=credentials['api_key']
+        )
 
-        for i in range(1, 6):  # Следующие 5 дней
-            date = today + timedelta(days=i)
-            day_name = day_names[date.weekday()]
-            date_str = date.strftime("%Y-%m-%d")
+        # Создаём черновик и получаем реальные таймслоты от Ozon
+        prep = await prepare_supply_draft(
+            client=client,
+            sku=request.sku,
+            quantity=request.quantity,
+            delivery_type=request.delivery_type.lower(),
+            cluster_ids=request.clusters,
+            fbo_sku=request.fbo_sku,
+            product_id=request.product_id,
+        )
+
+        if not prep["success"]:
+            raise HTTPException(status_code=400, detail=prep["message"])
+
+        # Кэшируем черновик по ключу
+        cache_key = f"{request.sku}|{request.quantity}|{request.delivery_type}|{sorted(request.clusters)}"
+        supply_draft_cache[cache_key] = {
+            "draft_id": prep["draft_id"],
+            "warehouse_id": prep["warehouse_id"],
+            "cluster_id": prep["cluster_id"],
+            "timeslots_by_date": prep["timeslots_by_date"],
+            "delivery_type": request.delivery_type,
+        }
+        print(f"[API] Кэш сохранён: {cache_key}")
+
+        # Форматируем даты для UI
+        day_names = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+        dates = []
+        for date_str in sorted(prep["timeslots_by_date"].keys()):
+            from datetime import date as date_cls
+            d = date_cls.fromisoformat(date_str)
+            day_name = day_names[d.weekday()]
             dates.append(f"{date_str} ({day_name})")
 
         return {"dates": dates}
@@ -236,17 +278,16 @@ async def get_dates(request: GetDatesRequest, x_telegram_init_data: str = Header
 
 @app.post("/api/create-supply")
 async def create_supply(request: CreateSupplyRequest, x_telegram_init_data: str = Header(None), client_id: str = None, api_key: str = None):
-    """Создает поставку в Озоне"""
+    """Создаёт поставку используя кэшированный черновик — только 1 запрос к Ozon."""
     try:
         credentials = None
+        user_id = None
 
-        # Приоритет 1: Telegram initData
         if x_telegram_init_data:
             user_id = extract_user_id_from_init_data(x_telegram_init_data)
             if user_id:
                 credentials = get_user_credentials(user_id)
 
-        # Приоритет 2: Query параметры (для локального тестирования)
         if not credentials and client_id and api_key:
             credentials = {"client_id": client_id, "api_key": api_key}
 
@@ -255,33 +296,55 @@ async def create_supply(request: CreateSupplyRequest, x_telegram_init_data: str 
 
         print(f"[API] /create-supply для SKU {request.sku}, пользователь {user_id}")
 
-        # Создаем Ozon client
+        # Берём черновик из кэша
+        cache_key = f"{request.sku}|{request.quantity}|{request.delivery_type}|{sorted(request.clusters)}"
+        cached = supply_draft_cache.get(cache_key)
+
+        if not cached:
+            raise HTTPException(status_code=400, detail="Черновик не найден. Пожалуйста, вернитесь к выбору даты.")
+
+        draft_id = cached["draft_id"]
+        warehouse_id = cached["warehouse_id"]
+        cluster_id = cached["cluster_id"]
+        timeslots_by_date = cached["timeslots_by_date"]
+        delivery_type = cached["delivery_type"]
+
+        # Ищем таймслот для выбранной даты
+        target_date = request.date.split(' ')[0]
+        slots = timeslots_by_date.get(target_date)
+        if not slots:
+            raise HTTPException(status_code=400, detail=f"Нет таймслотов для даты {target_date}")
+
+        first_slot = slots[0]
+        print(f"[API] Создаю поставку: draft_id={draft_id}, дата={target_date}, слот={first_slot['from']}")
+
         client = OzonClient(
             client_id=credentials['client_id'],
             api_key=credentials['api_key']
         )
 
-        # Вызываем полный поток создания поставки
-        result = await create_supply_full_flow(
-            client=client,
-            sku=request.sku,
-            quantity=request.quantity,
-            delivery_type=request.delivery_type.lower(),
-            cluster_ids=request.clusters,
-            target_date=request.date.split(' ')[0]  # Извлекаем только дату без дня недели
+        # Только 1 запрос к Ozon — финальное создание поставки
+        client.create_supply_v2(
+            draft_id=draft_id,
+            cluster_id=cluster_id,
+            warehouse_id=warehouse_id,
+            timeslot_from=first_slot["from"],
+            timeslot_to=first_slot["to"],
+            supply_type="DIRECT" if delivery_type.lower() == "direct" else "CROSSDOCK",
         )
 
-        if result["success"]:
-            print(f"[API] ✅ Поставка создана: draft_id={result['draft_id']}")
-            return {
-                "success": True,
-                "draft_id": result["draft_id"],
-                "order_id": result.get("order_id"),
-                "message": "Поставка успешно создана!"
-            }
-        else:
-            print(f"[API] ❌ Ошибка создания поставки: {result['message']}")
-            raise HTTPException(status_code=400, detail=result["message"])
+        order_id = client.get_supply_create_status(draft_id, timeout=120)
+
+        # Очищаем кэш после успешного создания
+        supply_draft_cache.pop(cache_key, None)
+
+        print(f"[API] ✅ Поставка создана: draft_id={draft_id}, order_id={order_id}")
+        return {
+            "success": True,
+            "draft_id": draft_id,
+            "order_id": order_id,
+            "message": "Поставка успешно создана!"
+        }
 
     except HTTPException:
         raise
