@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+
+  <g transform="translate(100 100) rotate(45)">
+    <path fill="#0050A0" fill-rule="evenodd"
+          d="M -62 -62 H 62 V 62 H -62 Z M -40 -12 H 40 V 12 H -40 Z"/>
+  </g>
+
+</svg>

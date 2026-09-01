@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+
+  <path fill="#0050A0" fill-rule="evenodd"
+        d="M 100 16 A 84 84 0 1 1 99.99 16 Z
+           M 70 88 A 18 18 0 1 0 70 124 A 18 18 0 1 0 70 88 Z
+           M 130 88 A 18 18 0 1 0 130 124 A 18 18 0 1 0 130 88 Z"/>
+
+</svg>
