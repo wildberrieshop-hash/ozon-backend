@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2060" width="1200" height="2060">
+<rect width="100%" height="100%" fill="#F4F1EA"/>
+  <text x="72" y="78" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="700"
+        letter-spacing="7" fill="#15233B">ASHU  ·  IDENTITY</text>
+  <text x="72" y="128" font-family="Inter, DejaVu Sans, sans-serif" font-size="40" font-weight="700"
+        fill="#111111">Электроника. Один знак.</text>
+  <text x="72" y="168" font-family="Inter, DejaVu Sans, sans-serif" font-size="18"
+        fill="#15233B" opacity="0.7">A + молния + чип. Геометрия в духе Аллана Питерса.</text>
+
+  <text x="72" y="230" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700"
+        letter-spacing="4" fill="#15233B" opacity="0.5">01  MARK  —  BLACK AND WHITE</text>
+  <rect x="72" y="248" width="520" height="440" fill="#FFFFFF"/>
+  <g transform="translate(182 308) scale(2.0)"><path fill="#111111" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <rect x="608" y="248" width="520" height="440" fill="#111111"/>
+  <g transform="translate(718 308) scale(2.0)"><path fill="#FFFFFF" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+
+  <text x="72" y="738" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700"
+        letter-spacing="4" fill="#15233B" opacity="0.5">02  COLOR  —  NAVY / VOLT / CREAM</text>
+  <rect x="72" y="756" width="340" height="300" fill="#FFFFFF"/>
+  <g transform="translate(142 796) scale(1.1)"><path fill="#15233B" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <rect x="428" y="756" width="340" height="300" fill="#15233B"/>
+  <g transform="translate(498 796) scale(1.1)"><path fill="#F4F1EA" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <g transform="translate(784 756)">
+    <rect width="340" height="300" fill="#F4F1EA"/>
+    <polygon fill="#15233B" points="170.00,22.00 280.85,86.00 280.85,214.00 170.00,278.00 59.15,214.00 59.15,86.00"/>
+    <g transform="translate(82 62) scale(0.88)"><path fill="#F4F1EA" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  </g>
+
+  <text x="72" y="1110" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700"
+        letter-spacing="4" fill="#15233B" opacity="0.5">03  LOCKUP  —  THE MARK IS THE A</text>
+  <rect x="72" y="1128" width="1056" height="200" fill="#FFFFFF"/>
+  <g transform="translate(120 1176) scale(1.0)">
+  <g transform="translate(-9.877 -11.111) scale(0.6173)"><path fill="#111111" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <g transform="translate(118 0)"><g transform="translate(0 0)"><g fill="#111111"><rect x="0" y="0" width="70" height="18"/><rect x="0" y="0" width="18" height="52"/><rect x="0" y="41" width="70" height="18"/><rect x="52" y="48" width="18" height="52"/><rect x="0" y="82" width="70" height="18"/></g></g><g transform="translate(86 0)"><g fill="#111111"><rect x="0" y="0" width="18" height="100"/><rect x="54" y="0" width="18" height="100"/><rect x="0" y="41" width="72" height="18"/></g></g><g transform="translate(174 0)"><path fill="#111111" fill-rule="evenodd" d="M 0 0 H 18 V 82 H 54 V 0 H 72 V 100 H 0 Z"/></g></g>
+</g>
+  <g transform="translate(620 1176) scale(1.0)">
+  <g transform="translate(-9.877 -11.111) scale(0.6173)"><path fill="#15233B" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <g transform="translate(118 0)"><g transform="translate(0 0)"><g fill="#15233B"><rect x="0" y="0" width="70" height="18"/><rect x="0" y="0" width="18" height="52"/><rect x="0" y="41" width="70" height="18"/><rect x="52" y="48" width="18" height="52"/><rect x="0" y="82" width="70" height="18"/></g></g><g transform="translate(86 0)"><g fill="#15233B"><rect x="0" y="0" width="18" height="100"/><rect x="54" y="0" width="18" height="100"/><rect x="0" y="41" width="72" height="18"/></g></g><g transform="translate(174 0)"><path fill="#15233B" fill-rule="evenodd" d="M 0 0 H 18 V 82 H 54 V 0 H 72 V 100 H 0 Z"/></g></g>
+</g>
+
+  <text x="72" y="1388" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700"
+        letter-spacing="4" fill="#15233B" opacity="0.5">04  BADGE  ·  AVATAR  ·  SIZE</text>
+
+  <g transform="translate(72 1408) scale(0.56)">
+    <circle cx="250" cy="250" r="244" fill="#15233B"/>
+    <circle cx="250" cy="250" r="230" fill="none" stroke="#C4A35A" stroke-width="4"/>
+    <circle cx="250" cy="250" r="152" fill="none" stroke="#C4A35A" stroke-width="2.5"/>
+    <text x="0" y="0" dy="0.35em" transform="translate(93.96 152.49) rotate(-58.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">A</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(189.08 76.38) rotate(-19.33)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">S</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(310.92 76.38) rotate(19.33)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">H</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(406.04 152.49) rotate(58.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">U</text>
+    <text x="0" y="0" dy="0.35em" transform="translate(87.54 336.38) rotate(62.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Э</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(109.88 369.25) rotate(49.60)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Л</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(138.75 396.56) rotate(37.20)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Е</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(172.82 417.03) rotate(24.80)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">К</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(210.49 429.71) rotate(12.40)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Т</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(250.00 434.00) rotate(0.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Р</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(289.51 429.71) rotate(-12.40)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">О</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(327.18 417.03) rotate(-24.80)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Н</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(361.25 396.56) rotate(-37.20)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">И</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(390.12 369.25) rotate(-49.60)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">К</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(412.46 336.38) rotate(-62.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">А</text>
+    <circle cx="78" cy="250" r="5" fill="#E85D04"/>
+    <circle cx="422" cy="250" r="5" fill="#E85D04"/>
+    <g transform="translate(150 132)"><path fill="#F4F1EA" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  </g>
+
+  <g transform="translate(380 1436) scale(0.48)">
+    <rect width="512" height="512" rx="96" fill="#15233B"/>
+    <g transform="translate(56 48) scale(2)"><path fill="#F4F1EA" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  </g>
+  <g transform="translate(656 1436) scale(0.48)">
+    <circle cx="256" cy="256" r="256" fill="#15233B"/>
+    <g transform="translate(56 48) scale(2)"><path fill="#F4F1EA" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  </g>
+
+  <g transform="translate(940 1460)"><path fill="#111111" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <g transform="translate(940 1680) scale(0.32)"><path fill="#111111" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <g transform="translate(1020 1696) scale(0.16)"><path fill="#111111" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <g transform="translate(1070 1704) scale(0.08)"><path fill="#111111" fill-rule="evenodd" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/></g>
+  <text x="940" y="1888" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" fill="#15233B">200</text>
+  <text x="940" y="1768" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" fill="#15233B">64</text>
+  <text x="1020" y="1768" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" fill="#15233B">32</text>
+  <text x="1070" y="1768" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" fill="#15233B">16</text>
+
+  <rect x="72" y="1936" width="28" height="28" fill="#15233B"/>
+  <rect x="108" y="1936" width="28" height="28" fill="#E85D04"/>
+  <rect x="144" y="1936" width="28" height="28" fill="#C4A35A"/>
+  <rect x="180" y="1936" width="28" height="28" fill="#111111"/>
+  <text x="224" y="1956" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" fill="#15233B">
+    Navy  #15233B    Volt  #E85D04    Gold  #C4A35A    Ink  #111111
+  </text>
+  <text x="72" y="2010" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" fill="#15233B" opacity="0.55">
+    ASHU  ·  магазин электроники  ·  знак читается как «A» и как энергия
+  </text>
+
+</svg>

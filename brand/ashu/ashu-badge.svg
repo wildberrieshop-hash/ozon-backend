@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+
+  <circle cx="250" cy="250" r="244" fill="#15233B"/>
+  <circle cx="250" cy="250" r="230" fill="none" stroke="#C4A35A" stroke-width="4"/>
+  <circle cx="250" cy="250" r="218" fill="none" stroke="#F4F1EA" stroke-width="1.25" opacity="0.45"/>
+  <circle cx="250" cy="250" r="152" fill="none" stroke="#C4A35A" stroke-width="2.5"/>
+
+  <text x="0" y="0" dy="0.35em" transform="translate(93.96 152.49) rotate(-58.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">A</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(189.08 76.38) rotate(-19.33)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">S</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(310.92 76.38) rotate(19.33)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">H</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(406.04 152.49) rotate(58.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="38" font-weight="800" fill="#F4F1EA">U</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(87.54 336.38) rotate(62.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Э</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(109.88 369.25) rotate(49.60)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Л</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(138.75 396.56) rotate(37.20)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Е</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(172.82 417.03) rotate(24.80)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">К</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(210.49 429.71) rotate(12.40)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Т</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(250.00 434.00) rotate(0.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Р</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(289.51 429.71) rotate(-12.40)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">О</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(327.18 417.03) rotate(-24.80)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">Н</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(361.25 396.56) rotate(-37.20)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">И</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(390.12 369.25) rotate(-49.60)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">К</text>
+  <text x="0" y="0" dy="0.35em" transform="translate(412.46 336.38) rotate(-62.00)" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#C4A35A">А</text>
+
+  <circle cx="78" cy="250" r="5" fill="#E85D04"/>
+  <circle cx="422" cy="250" r="5" fill="#E85D04"/>
+
+  <g transform="translate(150 132) scale(1.0)">
+    <path fill="#F4F1EA" d="M 100 18 L 184 180 L 148 180 L 128 154 L 72 154 L 52 180 L 16 180 Z"/><path fill="#E85D04" d="M 108 52 L 82 100 L 96 100 L 78 140 L 124 88 L 108 88 Z"/>
+  </g>
+
+</svg>
