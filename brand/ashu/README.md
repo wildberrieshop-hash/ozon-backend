@@ -39,3 +39,5 @@
 | Gold | `#C4A35A` |
 
 Пересборка: `python3 generate.py && ./render.sh`
+
+Десять вариантов от других бюро: [`bureaus/`](bureaus/).

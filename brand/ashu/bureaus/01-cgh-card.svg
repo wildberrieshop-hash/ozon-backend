@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 920" width="720" height="920">
+<rect width="100%" height="100%" fill="#F3F5F8"/>
+  <text x="48" y="56" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#0050A0" text-anchor="start">01  CHERMAYEFF  &amp;  GEISMAR  &amp;  HAVIV</text>
+  <text x="48" y="88" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="500" fill="#3A4A62" text-anchor="start">Одна фигура. Треугольник и круг — A и питание.</text>
+  <g transform="translate(200 180) scale(1.15)">
+<g fill="#0050A0" fill-rule="evenodd">
+  <path d="M 120 14 L 228 198 L 12 198 Z M 120 92 A 32 32 0 1 0 120 156 A 32 32 0 1 0 120 92 Z"/>
+</g>
+</g>
+  <text x="248" y="720" font-family="Inter, DejaVu Sans, sans-serif" font-size="42" font-weight="800" letter-spacing="10" fill="#0050A0">ASHU</text>
+  <text x="48" y="860" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="500" fill="#5A6A80" text-anchor="start">Классика знака: NBC, Mobil, Chase. Один цвет, ноль декора.</text>
+
+</svg>

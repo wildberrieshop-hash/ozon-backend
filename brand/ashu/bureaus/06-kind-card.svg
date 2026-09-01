@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 920" width="720" height="920">
+<rect width="100%" height="100%" fill="#EFECE6"/>
+  <text x="48" y="56" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#1F7A4D" text-anchor="start">06  KIND   OSLO / BERGEN</text>
+  <text x="48" y="88" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="500" fill="#141414" text-anchor="start">Вилка и есть буква. Одна смелая мысль.</text>
+  <g transform="translate(210 170) scale(1.2)">
+  <g fill="#141414">
+    <path d="M 100 22
+             L 170 132
+             C 186 154 176 186 148 186
+             H 52
+             C 24 186 14 154 30 132
+             Z"/>
+    <rect x="62" y="186" width="20" height="40" rx="6"/>
+    <rect x="118" y="186" width="20" height="40" rx="6"/>
+  </g>
+  <circle cx="78" cy="128" r="13" fill="#EFECE6"/>
+  <circle cx="122" cy="128" r="13" fill="#EFECE6"/>
+</g>
+  <text x="360" y="720" text-anchor="middle" font-family="Inter, DejaVu Sans, sans-serif" font-size="52"
+        font-weight="800" letter-spacing="6" fill="#141414">ASHU</text>
+  <text x="48" y="860" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="500" fill="#6A6860" text-anchor="start">Концепт важнее красоты. Награды за идею, не за тренд.</text>
+
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 920" width="720" height="920">
+<rect width="100%" height="100%" fill="#0A0A0A"/>
+  <text x="48" y="56" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#F2E111" text-anchor="start">04  DIXONBAXI</text>
+  <text x="48" y="88" font-family="Inter, DejaVu Sans, sans-serif" font-size="18" font-weight="500" fill="#C8C070" text-anchor="start">Медиа. Play-кнопка, которая читается как A.</text>
+  <g transform="translate(200 200) scale(1.25)">
+  <rect x="16" y="36" width="208" height="148" rx="18" fill="#F2E111"/>
+  <rect x="28" y="48" width="184" height="124" rx="8" fill="#0A0A0A"/>
+  <path fill="#F2E111" fill-rule="evenodd"
+        d="M 86 70 L 168 110 L 86 150 Z M 104 104 L 140 110 L 104 116 Z"/>
+</g>
+  <g transform="translate(80 720) skewX(-14)"><text x="0" y="0" font-family="Inter, DejaVu Sans, sans-serif" font-size="92" font-weight="900" letter-spacing="-2" fill="#F2E111">ASHU</text></g>
+  <text x="48" y="860" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="500" fill="#8A8840" text-anchor="start">ITV, UEFA, Snapchat. Плакат, не визитка.</text>
+
+</svg>
