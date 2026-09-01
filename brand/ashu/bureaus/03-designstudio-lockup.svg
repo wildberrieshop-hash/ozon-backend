@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" width="640" height="180">
+<rect width="100%" height="100%" fill="#FFFFFF"/><g transform="translate(80 54)"><g fill="#0B0B0B" transform="scale(1.0)">
+  <path fill-rule="evenodd" d="M 10 72 L 26 0 H 46 L 62 72 H 50 L 46 54 H 22 L 18 72 Z M 25 42 H 43 L 36 12 Z"/>
+  <path d="M 110 8 C 90 8 76 18 76 32 C 76 44 88 48 102 52 C 112 55 114 58 114 62
+           C 114 66 108 68 98 68 C 88 68 84 64 82 60 H 72 C 74 70 86 76 98 76
+           C 120 76 128 66 128 56 C 128 44 116 40 102 36 C 92 33 90 30 90 26
+           C 90 20 96 16 108 16 C 116 16 120 20 122 26 H 132 C 128 14 120 8 110 8 Z"/>
+  <path d="M 156 0 H 168 V 30 H 204 V 0 H 216 V 72 H 204 V 42 H 168 V 72 H 156 Z"/>
+  <path d="M 240 0 H 252 V 54 C 252 66 276 66 276 54 V 0 H 288 V 54
+           C 288 74 240 74 240 54 Z"/>
+</g></g>
+</svg>

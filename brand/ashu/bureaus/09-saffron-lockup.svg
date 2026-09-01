@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" width="680" height="200">
+<rect width="100%" height="100%" fill="#E8F1F2"/><g transform="translate(16 8) scale(0.85)">
+  <g fill="none" stroke="#0B6E7A" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="16" d="M 40 188 L 100 28 L 160 188"/>
+    <path stroke-width="14" d="M 62 124 H 138"/>
+    <path stroke-width="8" d="M 128 40 A 36 36 0 0 1 154 78"/>
+    <path stroke-width="8" d="M 136 28 A 56 56 0 0 1 176 86"/>
+    <path stroke-width="8" d="M 144 16 A 76 76 0 0 1 198 94"/>
+  </g>
+</g><text x="250" y="120" font-family="Inter, DejaVu Sans, sans-serif" font-size="48" font-weight="600" letter-spacing="10" fill="#12313A">ASHU</text>
+</svg>
