@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200">
+<rect width="100%" height="100%" fill="#FFF6F1"/><g transform="translate(20 10) scale(0.9)">
+  <circle cx="100" cy="100" r="96" fill="#FF3A1A"/>
+  <path fill="#FFFFFF" d="M 100 38 L 148 162 H 128 L 118 134 H 82 L 72 162 H 52 Z
+                           M 88 116 H 112 L 100 80 Z"/>
+</g><text x="230" y="122" font-family="Inter, DejaVu Sans, sans-serif" font-size="56" font-weight="900" letter-spacing="-1" fill="#1A1A1A">ASHU</text>
+</svg>

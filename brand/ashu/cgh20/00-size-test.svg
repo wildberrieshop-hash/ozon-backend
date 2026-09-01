@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 740" width="820" height="740">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700"
+        letter-spacing="3" fill="#0050A0">SIZE TEST  ·  HOW A BUYER SEES IT</text>
+  <text x="40" y="88" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+        fill="#111111">64px — плитка маркетплейса</text>
+<g transform="translate(40 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 12 L 188 188 H 12 Z
+           M 100 88 A 30 30 0 1 0 100 148 A 30 30 0 1 0 100 88 Z"/>
+</g>
+</g><g transform="translate(116 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)"><polygon fill="#FFFFFF" points="179.45,67.09 179.45,132.91 132.91,179.45 67.09,179.45 20.55,132.91 20.55,67.09 67.09,20.55 132.91,20.55"/></g>
+</g><g transform="translate(192 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <g fill="#FFFFFF">
+    <polygon points="46,176 70,176 114,28 90,28"/>
+    <polygon points="154,176 130,176 86,28 110,28"/>
+    <rect x="58" y="108" width="84" height="24"/>
+  </g>
+</g>
+</g><g transform="translate(268 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 12 L 176 56 L 176 144 L 100 188 L 24 144 L 24 56 Z
+           M 100 78 A 28 28 0 1 0 100 134 A 28 28 0 1 0 100 78 Z"/>
+</g>
+</g><g transform="translate(344 120)">
+  <rect width="64" height="64" rx="12" fill="#E31C23"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 14 A 86 86 0 1 1 99.99 14 Z
+           M 100 50 A 50 50 0 1 0 100 150 A 50 50 0 1 0 100 50 Z
+           M 100 100 L 168 48 L 176 72 Z"/>
+</g>
+</g><g transform="translate(420 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)"><polygon fill="#FFFFFF" points="100,16 184,88 184,188 16,188 16,88"/></g>
+</g><g transform="translate(496 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)"><path fill="#FFFFFF" d="M 100 20 L 184 132 H 148 L 100 72 L 52 132 H 16 Z"/></g>
+</g><g transform="translate(572 120)">
+  <rect width="64" height="64" rx="12" fill="#E31C23"/>
+  <g transform="scale(0.32)"><polygon fill="#FFFFFF" points="118,16 52,108 92,108 70,188 160,84 112,84"/></g>
+</g><g transform="translate(648 120)">
+  <rect width="64" height="64" rx="12" fill="#111111"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 24 44 H 176 V 156 H 24 Z
+           M 84 74 L 140 100 L 84 126 Z"/>
+</g>
+</g><g transform="translate(724 120)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16 A 84 84 0 1 1 99.99 16 Z
+           M 70 88 A 18 18 0 1 0 70 124 A 18 18 0 1 0 70 88 Z
+           M 130 88 A 18 18 0 1 0 130 124 A 18 18 0 1 0 130 88 Z"/>
+</g>
+</g><g transform="translate(40 212)">
+  <rect width="64" height="64" rx="12" fill="#111111"/>
+  <g transform="scale(0.32)">
+  <rect x="24" y="24" width="112" height="112" fill="#0050A0"/>
+  <rect x="64" y="64" width="112" height="112" fill="#E31C23"/>
+</g>
+</g><g transform="translate(116 212)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <g transform="translate(100 100) rotate(45)">
+    <path fill="#FFFFFF" fill-rule="evenodd"
+          d="M -62 -62 H 62 V 62 H -62 Z M -40 -12 H 40 V 12 H -40 Z"/>
+  </g>
+</g>
+</g><g transform="translate(192 212)">
+  <rect width="64" height="64" rx="12" fill="#111111"/>
+  <g transform="scale(0.32)"><path fill="#E31C23" d="M 100 108 L 42.5 36.1 A 86 86 0 0 1 91.0 14.5 Z"/>
+<path fill="#F47B20" d="M 100 108 L 100.0 14.0 A 86 86 0 0 1 150.5 30.4 Z"/>
+<path fill="#0050A0" d="M 100 108 L 157.5 36.1 A 86 86 0 0 1 184.1 82.1 Z"/></g>
+</g><g transform="translate(268 212)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 10 A 90 90 0 1 1 99.99 10 Z
+           M 100 42 L 142 150 H 124 L 116 128 H 84 L 76 150 H 58 Z
+           M 90 110 H 110 L 100 82 Z"/>
+</g>
+</g><g transform="translate(344 212)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)"><rect x="94" y="26" width="28" height="28" fill="#FFFFFF"/>
+<rect x="62" y="58" width="28" height="28" fill="#FFFFFF"/>
+<rect x="126" y="58" width="28" height="28" fill="#FFFFFF"/>
+<rect x="62" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="94" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="126" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="30" y="122" width="28" height="28" fill="#FFFFFF"/>
+<rect x="158" y="122" width="28" height="28" fill="#FFFFFF"/>
+<rect x="30" y="154" width="28" height="28" fill="#FFFFFF"/>
+<rect x="158" y="154" width="28" height="28" fill="#FFFFFF"/></g>
+</g><g transform="translate(420 212)">
+  <rect width="64" height="64" rx="12" fill="#111111"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16
+           A 52 52 0 0 1 152 68 V 132
+           A 52 52 0 0 1 48 132 V 68
+           A 52 52 0 0 1 100 16 Z
+           M 86 40 H 114 V 92 H 86 Z"/>
+</g>
+</g><g transform="translate(496 212)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <g fill="#FFFFFF">
+    <rect x="36" y="132" width="36" height="48" rx="4"/>
+    <rect x="82" y="84" width="36" height="96" rx="4"/>
+    <rect x="128" y="36" width="36" height="144" rx="4"/>
+  </g>
+</g>
+</g><g transform="translate(572 212)">
+  <rect width="64" height="64" rx="12" fill="#E31C23"/>
+  <g transform="scale(0.32)"><path fill="#FFFFFF" d="M 100 16 L 184 104 H 140 V 188 H 60 V 104 H 16 Z"/></g>
+</g><g transform="translate(648 212)">
+  <rect width="64" height="64" rx="12" fill="#0050A0"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16 L 184 78 H 172 V 188 H 28 V 78 H 16 Z
+           M 93 90 H 107 V 176 H 93 Z
+           M 40 125 H 160 V 139 H 40 Z"/>
+</g>
+</g><g transform="translate(724 212)">
+  <rect width="64" height="64" rx="12" fill="#E31C23"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 8 L 192 192 H 148 L 132 152 H 68 L 52 192 H 8 Z
+           M 84 120 H 116 L 100 76 Z"/>
+</g>
+</g>
+  <text x="40" y="360" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+        fill="#111111">32px — фавикон / бейдж</text>
+<g transform="translate(40 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 12 L 188 188 H 12 Z
+           M 100 88 A 30 30 0 1 0 100 148 A 30 30 0 1 0 100 88 Z"/>
+</g>
+</g><g transform="translate(116 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)"><polygon fill="#FFFFFF" points="179.45,67.09 179.45,132.91 132.91,179.45 67.09,179.45 20.55,132.91 20.55,67.09 67.09,20.55 132.91,20.55"/></g>
+</g><g transform="translate(192 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <g fill="#FFFFFF">
+    <polygon points="46,176 70,176 114,28 90,28"/>
+    <polygon points="154,176 130,176 86,28 110,28"/>
+    <rect x="58" y="108" width="84" height="24"/>
+  </g>
+</g>
+</g><g transform="translate(268 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 12 L 176 56 L 176 144 L 100 188 L 24 144 L 24 56 Z
+           M 100 78 A 28 28 0 1 0 100 134 A 28 28 0 1 0 100 78 Z"/>
+</g>
+</g><g transform="translate(344 392)">
+  <rect width="32" height="32" rx="6" fill="#E31C23"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 14 A 86 86 0 1 1 99.99 14 Z
+           M 100 50 A 50 50 0 1 0 100 150 A 50 50 0 1 0 100 50 Z
+           M 100 100 L 168 48 L 176 72 Z"/>
+</g>
+</g><g transform="translate(420 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)"><polygon fill="#FFFFFF" points="100,16 184,88 184,188 16,188 16,88"/></g>
+</g><g transform="translate(496 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)"><path fill="#FFFFFF" d="M 100 20 L 184 132 H 148 L 100 72 L 52 132 H 16 Z"/></g>
+</g><g transform="translate(572 392)">
+  <rect width="32" height="32" rx="6" fill="#E31C23"/>
+  <g transform="scale(0.16)"><polygon fill="#FFFFFF" points="118,16 52,108 92,108 70,188 160,84 112,84"/></g>
+</g><g transform="translate(648 392)">
+  <rect width="32" height="32" rx="6" fill="#111111"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 24 44 H 176 V 156 H 24 Z
+           M 84 74 L 140 100 L 84 126 Z"/>
+</g>
+</g><g transform="translate(724 392)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16 A 84 84 0 1 1 99.99 16 Z
+           M 70 88 A 18 18 0 1 0 70 124 A 18 18 0 1 0 70 88 Z
+           M 130 88 A 18 18 0 1 0 130 124 A 18 18 0 1 0 130 88 Z"/>
+</g>
+</g><g transform="translate(40 452)">
+  <rect width="32" height="32" rx="6" fill="#111111"/>
+  <g transform="scale(0.16)">
+  <rect x="24" y="24" width="112" height="112" fill="#0050A0"/>
+  <rect x="64" y="64" width="112" height="112" fill="#E31C23"/>
+</g>
+</g><g transform="translate(116 452)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <g transform="translate(100 100) rotate(45)">
+    <path fill="#FFFFFF" fill-rule="evenodd"
+          d="M -62 -62 H 62 V 62 H -62 Z M -40 -12 H 40 V 12 H -40 Z"/>
+  </g>
+</g>
+</g><g transform="translate(192 452)">
+  <rect width="32" height="32" rx="6" fill="#111111"/>
+  <g transform="scale(0.16)"><path fill="#E31C23" d="M 100 108 L 42.5 36.1 A 86 86 0 0 1 91.0 14.5 Z"/>
+<path fill="#F47B20" d="M 100 108 L 100.0 14.0 A 86 86 0 0 1 150.5 30.4 Z"/>
+<path fill="#0050A0" d="M 100 108 L 157.5 36.1 A 86 86 0 0 1 184.1 82.1 Z"/></g>
+</g><g transform="translate(268 452)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 10 A 90 90 0 1 1 99.99 10 Z
+           M 100 42 L 142 150 H 124 L 116 128 H 84 L 76 150 H 58 Z
+           M 90 110 H 110 L 100 82 Z"/>
+</g>
+</g><g transform="translate(344 452)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)"><rect x="94" y="26" width="28" height="28" fill="#FFFFFF"/>
+<rect x="62" y="58" width="28" height="28" fill="#FFFFFF"/>
+<rect x="126" y="58" width="28" height="28" fill="#FFFFFF"/>
+<rect x="62" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="94" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="126" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="30" y="122" width="28" height="28" fill="#FFFFFF"/>
+<rect x="158" y="122" width="28" height="28" fill="#FFFFFF"/>
+<rect x="30" y="154" width="28" height="28" fill="#FFFFFF"/>
+<rect x="158" y="154" width="28" height="28" fill="#FFFFFF"/></g>
+</g><g transform="translate(420 452)">
+  <rect width="32" height="32" rx="6" fill="#111111"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16
+           A 52 52 0 0 1 152 68 V 132
+           A 52 52 0 0 1 48 132 V 68
+           A 52 52 0 0 1 100 16 Z
+           M 86 40 H 114 V 92 H 86 Z"/>
+</g>
+</g><g transform="translate(496 452)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <g fill="#FFFFFF">
+    <rect x="36" y="132" width="36" height="48" rx="4"/>
+    <rect x="82" y="84" width="36" height="96" rx="4"/>
+    <rect x="128" y="36" width="36" height="144" rx="4"/>
+  </g>
+</g>
+</g><g transform="translate(572 452)">
+  <rect width="32" height="32" rx="6" fill="#E31C23"/>
+  <g transform="scale(0.16)"><path fill="#FFFFFF" d="M 100 16 L 184 104 H 140 V 188 H 60 V 104 H 16 Z"/></g>
+</g><g transform="translate(648 452)">
+  <rect width="32" height="32" rx="6" fill="#0050A0"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16 L 184 78 H 172 V 188 H 28 V 78 H 16 Z
+           M 93 90 H 107 V 176 H 93 Z
+           M 40 125 H 160 V 139 H 40 Z"/>
+</g>
+</g><g transform="translate(724 452)">
+  <rect width="32" height="32" rx="6" fill="#E31C23"/>
+  <g transform="scale(0.16)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 8 L 192 192 H 148 L 132 152 H 68 L 52 192 H 8 Z
+           M 84 120 H 116 L 100 76 Z"/>
+</g>
+</g>
+  <text x="40" y="560" font-family="Inter, DejaVu Sans, sans-serif" font-size="28" font-weight="700"
+        fill="#111111">16px — край</text>
+<g transform="translate(40 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 12 L 188 188 H 12 Z
+           M 100 88 A 30 30 0 1 0 100 148 A 30 30 0 1 0 100 88 Z"/>
+</g>
+</g><g transform="translate(116 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)"><polygon fill="#FFFFFF" points="179.45,67.09 179.45,132.91 132.91,179.45 67.09,179.45 20.55,132.91 20.55,67.09 67.09,20.55 132.91,20.55"/></g>
+</g><g transform="translate(192 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <g fill="#FFFFFF">
+    <polygon points="46,176 70,176 114,28 90,28"/>
+    <polygon points="154,176 130,176 86,28 110,28"/>
+    <rect x="58" y="108" width="84" height="24"/>
+  </g>
+</g>
+</g><g transform="translate(268 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 12 L 176 56 L 176 144 L 100 188 L 24 144 L 24 56 Z
+           M 100 78 A 28 28 0 1 0 100 134 A 28 28 0 1 0 100 78 Z"/>
+</g>
+</g><g transform="translate(344 592)">
+  <rect width="16" height="16" rx="3" fill="#E31C23"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 14 A 86 86 0 1 1 99.99 14 Z
+           M 100 50 A 50 50 0 1 0 100 150 A 50 50 0 1 0 100 50 Z
+           M 100 100 L 168 48 L 176 72 Z"/>
+</g>
+</g><g transform="translate(420 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)"><polygon fill="#FFFFFF" points="100,16 184,88 184,188 16,188 16,88"/></g>
+</g><g transform="translate(496 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)"><path fill="#FFFFFF" d="M 100 20 L 184 132 H 148 L 100 72 L 52 132 H 16 Z"/></g>
+</g><g transform="translate(572 592)">
+  <rect width="16" height="16" rx="3" fill="#E31C23"/>
+  <g transform="scale(0.08)"><polygon fill="#FFFFFF" points="118,16 52,108 92,108 70,188 160,84 112,84"/></g>
+</g><g transform="translate(648 592)">
+  <rect width="16" height="16" rx="3" fill="#111111"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 24 44 H 176 V 156 H 24 Z
+           M 84 74 L 140 100 L 84 126 Z"/>
+</g>
+</g><g transform="translate(724 592)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16 A 84 84 0 1 1 99.99 16 Z
+           M 70 88 A 18 18 0 1 0 70 124 A 18 18 0 1 0 70 88 Z
+           M 130 88 A 18 18 0 1 0 130 124 A 18 18 0 1 0 130 88 Z"/>
+</g>
+</g><g transform="translate(40 636)">
+  <rect width="16" height="16" rx="3" fill="#111111"/>
+  <g transform="scale(0.08)">
+  <rect x="24" y="24" width="112" height="112" fill="#0050A0"/>
+  <rect x="64" y="64" width="112" height="112" fill="#E31C23"/>
+</g>
+</g><g transform="translate(116 636)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <g transform="translate(100 100) rotate(45)">
+    <path fill="#FFFFFF" fill-rule="evenodd"
+          d="M -62 -62 H 62 V 62 H -62 Z M -40 -12 H 40 V 12 H -40 Z"/>
+  </g>
+</g>
+</g><g transform="translate(192 636)">
+  <rect width="16" height="16" rx="3" fill="#111111"/>
+  <g transform="scale(0.08)"><path fill="#E31C23" d="M 100 108 L 42.5 36.1 A 86 86 0 0 1 91.0 14.5 Z"/>
+<path fill="#F47B20" d="M 100 108 L 100.0 14.0 A 86 86 0 0 1 150.5 30.4 Z"/>
+<path fill="#0050A0" d="M 100 108 L 157.5 36.1 A 86 86 0 0 1 184.1 82.1 Z"/></g>
+</g><g transform="translate(268 636)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 10 A 90 90 0 1 1 99.99 10 Z
+           M 100 42 L 142 150 H 124 L 116 128 H 84 L 76 150 H 58 Z
+           M 90 110 H 110 L 100 82 Z"/>
+</g>
+</g><g transform="translate(344 636)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)"><rect x="94" y="26" width="28" height="28" fill="#FFFFFF"/>
+<rect x="62" y="58" width="28" height="28" fill="#FFFFFF"/>
+<rect x="126" y="58" width="28" height="28" fill="#FFFFFF"/>
+<rect x="62" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="94" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="126" y="90" width="28" height="28" fill="#FFFFFF"/>
+<rect x="30" y="122" width="28" height="28" fill="#FFFFFF"/>
+<rect x="158" y="122" width="28" height="28" fill="#FFFFFF"/>
+<rect x="30" y="154" width="28" height="28" fill="#FFFFFF"/>
+<rect x="158" y="154" width="28" height="28" fill="#FFFFFF"/></g>
+</g><g transform="translate(420 636)">
+  <rect width="16" height="16" rx="3" fill="#111111"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16
+           A 52 52 0 0 1 152 68 V 132
+           A 52 52 0 0 1 48 132 V 68
+           A 52 52 0 0 1 100 16 Z
+           M 86 40 H 114 V 92 H 86 Z"/>
+</g>
+</g><g transform="translate(496 636)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <g fill="#FFFFFF">
+    <rect x="36" y="132" width="36" height="48" rx="4"/>
+    <rect x="82" y="84" width="36" height="96" rx="4"/>
+    <rect x="128" y="36" width="36" height="144" rx="4"/>
+  </g>
+</g>
+</g><g transform="translate(572 636)">
+  <rect width="16" height="16" rx="3" fill="#E31C23"/>
+  <g transform="scale(0.08)"><path fill="#FFFFFF" d="M 100 16 L 184 104 H 140 V 188 H 60 V 104 H 16 Z"/></g>
+</g><g transform="translate(648 636)">
+  <rect width="16" height="16" rx="3" fill="#0050A0"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 16 L 184 78 H 172 V 188 H 28 V 78 H 16 Z
+           M 93 90 H 107 V 176 H 93 Z
+           M 40 125 H 160 V 139 H 40 Z"/>
+</g>
+</g><g transform="translate(724 636)">
+  <rect width="16" height="16" rx="3" fill="#E31C23"/>
+  <g transform="scale(0.08)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 8 L 192 192 H 148 L 132 152 H 68 L 52 192 H 8 Z
+           M 84 120 H 116 L 100 76 Z"/>
+</g>
+</g>
+</svg>

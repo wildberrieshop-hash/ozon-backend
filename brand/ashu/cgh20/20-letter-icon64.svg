@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+
+  <rect width="64" height="64" rx="12" fill="#E31C23"/>
+  <g transform="scale(0.32)">
+  <path fill="#FFFFFF" fill-rule="evenodd"
+        d="M 100 8 L 192 192 H 148 L 132 152 H 68 L 52 192 H 8 Z
+           M 84 120 H 116 L 100 76 Z"/>
+</g>
+
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200">
+<rect width="720" height="200" fill="#0A0A0A"/><g transform="translate(24 16) scale(0.72)">
+  <rect x="16" y="36" width="208" height="148" rx="18" fill="#F2E111"/>
+  <rect x="28" y="48" width="184" height="124" rx="8" fill="#0A0A0A"/>
+  <path fill="#F2E111" fill-rule="evenodd"
+        d="M 86 70 L 168 110 L 86 150 Z M 104 104 L 140 110 L 104 116 Z"/>
+</g><g transform="translate(250 130) skewX(-14)"><text x="0" y="0" font-family="Inter, DejaVu Sans, sans-serif" font-size="72" font-weight="900" letter-spacing="-2" fill="#F2E111">ASHU</text></g>
+</svg>
